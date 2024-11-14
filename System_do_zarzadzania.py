@@ -1,7 +1,4 @@
 class AgeDescriptor:
-    def __init__(self):
-        self._age = 0
-
     def __get__(self, instance, owner):
         print('Odczytuje dane')
         return self._age
@@ -13,9 +10,6 @@ class AgeDescriptor:
             raise ValueError('GOoogooo zazu')
         
 class SalaryDescriptor:
-    def __init__(self):
-        self._salary = float(0)
-    
     def __get__(self, instance, owner):
         print('Odczytuje dane')
         return self._salary
@@ -35,5 +29,5 @@ class Employee:
         self.salary = salary
 
 
-obj = Employee('Josh', 35, 2100)
+obj = Employee('Josh', 35, 2100.35)
 print('wiek ', obj.age,'pensja ', obj.salary,'imie ', obj.name)
